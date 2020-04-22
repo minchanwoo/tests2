@@ -6,9 +6,11 @@ const config = require(__dirname + '/../config/config.json')[env];
 const sequelize = new Sequelize(config.database, config.username, config.password, config);
 
 const User = require('./user')(sequelize, Sequelize);
+const Post = require('./post')(sequelize, Sequelize);
 
 module.exports = {
     sequelize,
     Sequelize,
-    User
+    User,
+    Post
 };
