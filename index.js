@@ -1,6 +1,10 @@
 const express = require('express');
 
+var { sequelize } = require('./models');
+
 const app = express();
+
+sequelize.sync();
 
 const port = process.env.PORT || 3000;
 
