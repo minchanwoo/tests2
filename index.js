@@ -1,6 +1,6 @@
 const express = require('express');
 
-var { sequelize, User } = require('./models');
+var { sequelize } = require('./models');
 
 const app = express();
 
@@ -13,9 +13,7 @@ app.use(express.urlencoded({extended: true}));
 
 
 app.get('/', async(req, res)=> {
-    res.send('HELLO HEROKU~!!')
-    const result = await User.findAll();
-    console.log({result})
+    res.send('안녕하세요 헤로쿠에 테스트중입니다')
 })
 
 app.listen(port, ()=> {
